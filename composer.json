@@ -1,0 +1,12 @@
+{
+    "name": "hritvi/mvc",
+    "authors": [
+        {
+            "name": "hritvi",
+            "email": "hritvi2801@gmail.com"
+        }
+    ],
+    "require": {"torophp/torophp": "dev-master",
+        "twig/twig": "^2.0"},
+    "autoload": {"classmap":["app"]}
+}

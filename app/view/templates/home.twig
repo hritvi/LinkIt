@@ -1,0 +1,18 @@
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+Welcome {{user}}
+<form method="POST">
+	Title:<input type="text" name="title"><br />
+	Url:<input type="text" name="url"><br/>
+	<input type="submit" value="Submit">
+</form>
+
+{% for link in links %}
+<div>
+	<a href="{{ link.url }}"><h3>{{link.title}}</h3></a>
+	<a href = "upvotes/{{ link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ link.votes }} <br>
+	<a href="link/{{ link.id }}">Comments</a>
+	<p>By {{ link.username }}</p>
+	</div>
+{% endfor %}

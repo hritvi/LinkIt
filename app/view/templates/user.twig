@@ -1,0 +1,22 @@
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+Welcome {{ user.username }}
+<div>Your Links: </div>
+{% for link in links %}
+<div>
+	<a href="{{ link.url }}"><h3>{{link.title}}</h3></a>
+	<a href ="upvotes/{{ link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ link.votes }} <br>
+	<a href="link/{{ link.id }}">Comments</a>
+	<p>By {{ link.username }}</p>
+</div>
+{% endfor %}
+<!--<div>Your Comments: </div>
+{% for comment in comments %}
+<div>
+	<a href="{{  }}"><h3>{{link.title}}</h3></a>
+	<span class="glyphicon glyphicon-chevron-up"></span> | <span class="glyphicon glyphicon-chevron-down"></span><br>
+	<a href="link/{{ link.id }}">Comments</a>
+	<p>By {{ link.username }}</p>
+</div>
+{% endfor %}-->

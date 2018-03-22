@@ -1,0 +1,40 @@
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<div>
+	<a href="{{ link.url }}"><h3>{{link.title}}</h3></a>
+	<a href ="upvotes/{{ link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ link.votes }}
+	<br>
+	<p>By {{ link.username }}</p>
+</div>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#recent">Recent Comments</a></li>
+  <li><a data-toggle="tab" href="#popular">Most Popular Comments</a></li>
+</ul>
+<div class="tab-content">
+  <div id="recent" class="tab-pane fade in active">
+    <h3>RECENT</h3>
+    {% for time_comment in time_comments %}
+	<div>
+		{{ time_comment.content }} by {{ time_comment.username }}
+	</div>
+	{% endfor %}
+  </div>
+  <div id="popular" class="tab-pane fade">
+    <h3>Most Popular</h3>
+    {% for vote_comment in vote_comments %}
+	<div>
+		{{ vote_comment.content }}
+	</div>
+	{% endfor %}
+  </div>
+</div>
+
+<form method="post">
+Comment: <input type="text" name="comment">
+<input type="submit" value="Submit">
+</form>
