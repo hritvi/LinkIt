@@ -7,7 +7,7 @@
 		{
 			if(!self::$instance){
 				//generate instance
-				self::$instance = new PDO("mysql:host=localhost;dbname=mvc", 'Add your username', 'Add your password');
+				self::$instance = new PDO("mysql:host=localhost;dbname=mvc", 'Your username', 'Your Password');
 			    // set the PDO error mode to exception
 			    self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			}

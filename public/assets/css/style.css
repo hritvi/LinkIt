@@ -1,0 +1,19 @@
+.add_link {
+	top:25%;
+	position:sticky;
+}
+.btn{
+	margin-top:5px;
+}
+.links{
+	border: solid;
+	border-width: 1.5px;
+	margin: 2px;
+	padding: 5px;
+	border-radius: 5%;
+}
+.sign{
+	top:35%;
+	position:sticky;
+	text-align: center;
+}

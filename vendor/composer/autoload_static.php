@@ -46,8 +46,7 @@ class ComposerStaticInit6ca5e068afa51f84ce40f53c28506237
     public static $classMap = array (
         'Controller\\HomeController' => __DIR__ . '/../..' . '/app/controller/home_controller.php',
         'Controller\\LinkController' => __DIR__ . '/../..' . '/app/controller/link_controller.php',
-        'Controller\\MostController' => __DIR__ . '/../..' . '/app/controller/most_controller.php',
-        'Controller\\NewLinkController' => __DIR__ . '/../..' . '/app/controller/newlinks_controller.php',
+        'Controller\\LogoutController' => __DIR__ . '/../..' . '/app/controller/logout_controller.php',
         'Controller\\SignInController' => __DIR__ . '/../..' . '/app/controller/signin_controller.php',
         'Controller\\SignUpController' => __DIR__ . '/../..' . '/app/controller/signup_controller.php',
         'Controller\\UserController' => __DIR__ . '/../..' . '/app/controller/user_controller.php',
@@ -55,8 +54,6 @@ class ComposerStaticInit6ca5e068afa51f84ce40f53c28506237
         'DB' => __DIR__ . '/../..' . '/app/model/db.php',
         'Model\\CommentModel' => __DIR__ . '/../..' . '/app/model/comment_model.php',
         'Model\\LinkModel' => __DIR__ . '/../..' . '/app/model/link_model.php',
-        'Model\\MostModel' => __DIR__ . '/../..' . '/app/model/most_model.php',
-        'Model\\NewLinkModel' => __DIR__ . '/../..' . '/app/model/newlink_model.php',
         'Model\\SignModel' => __DIR__ . '/../..' . '/app/model/sign_model.php',
         'Model\\UpvoteModel' => __DIR__ . '/../..' . '/app/model/votes_model.php',
         'Model\\UserModel' => __DIR__ . '/../..' . '/app/model/user_model.php',

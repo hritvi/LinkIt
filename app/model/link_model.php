@@ -1,7 +1,7 @@
 <?php
 	namespace Model;
 	class LinkModel{
-		public static function all()
+		public static function trending()
 		{
 			$db = \DB::get_instance();
 			$stmt = $db->prepare("SELECT * FROM links");
@@ -24,5 +24,20 @@
 			$row=$stmt->fetch();
 			return $row; 
 		}
-
+		public static function votes_sort()
+		{
+			$db = \DB::get_instance();
+			$stmt = $db->prepare("SELECT * FROM links ORDER BY votes DESC");
+			$stmt->execute();
+			$rows=$stmt->fetchAll();
+			return $rows;
+		}
+		public static function time_sort()
+		{
+			$db = \DB::get_instance();
+			$stmt = $db->prepare("SELECT * FROM links ORDER BY time_created DESC");
+			$stmt->execute();
+			$rows=$stmt->fetchAll();
+			return $rows;
+		}
 	}

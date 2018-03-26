@@ -5,7 +5,7 @@
 		public function get($id)
 		{
 			if(!isset($_SESSION["name"])){
-				$links=\Model\LinkModel::all();
+				$links=\Model\LinkModel::trending();
 				echo \View\Loader::make()->render('templates/index.twig',array('links' => $links));
 				header("location: http://localhost:8000/signin");
 			}

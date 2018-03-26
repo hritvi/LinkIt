@@ -8,8 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Controller\\HomeController' => $baseDir . '/app/controller/home_controller.php',
     'Controller\\LinkController' => $baseDir . '/app/controller/link_controller.php',
-    'Controller\\MostController' => $baseDir . '/app/controller/most_controller.php',
-    'Controller\\NewLinkController' => $baseDir . '/app/controller/newlinks_controller.php',
+    'Controller\\LogoutController' => $baseDir . '/app/controller/logout_controller.php',
     'Controller\\SignInController' => $baseDir . '/app/controller/signin_controller.php',
     'Controller\\SignUpController' => $baseDir . '/app/controller/signup_controller.php',
     'Controller\\UserController' => $baseDir . '/app/controller/user_controller.php',
@@ -17,8 +16,6 @@ return array(
     'DB' => $baseDir . '/app/model/db.php',
     'Model\\CommentModel' => $baseDir . '/app/model/comment_model.php',
     'Model\\LinkModel' => $baseDir . '/app/model/link_model.php',
-    'Model\\MostModel' => $baseDir . '/app/model/most_model.php',
-    'Model\\NewLinkModel' => $baseDir . '/app/model/newlink_model.php',
     'Model\\SignModel' => $baseDir . '/app/model/sign_model.php',
     'Model\\UpvoteModel' => $baseDir . '/app/model/votes_model.php',
     'Model\\UserModel' => $baseDir . '/app/model/user_model.php',

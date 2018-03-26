@@ -14,8 +14,6 @@
 			$stmt=$db->prepare("SELECT * FROM users WHERE username = ? and password = ?");
 			$stmt->execute([$user,$password]);
 			$row=$stmt->fetch();
-			$_SESSION['name']=$row['username'];
-			$_SESSION['user_id']=$row['user_id'];
 			return $row;
 		}
 	}		

@@ -9,8 +9,7 @@
 	    "/signup" => "\Controller\SignUpController",
 	    "/signin" => "\Controller\SignInController",
 	    "/link/:number"=>"\Controller\LinkController",
-	    "/new" => "\Controller\NewLinkController",
-	    "/mostpopular" => "\Controller\MostController",
 	    "/user/:alpha" => "\Controller\UserController",
-	    "/upvotes/:number" => "\Controller\VotesController"
+	    "/upvotes/:number" => "\Controller\VotesController",
+	    "/logout" => "\Controller\LogoutController"
 	));

@@ -1,19 +1,84 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<form method="POST">
-	Title:<input type="text" name="title"><br />
-	Url:<input type="text" name="url"><br/>
-	Username:<input type="text" name="user"><br/>
-	<input type="submit" value="Submit">
-</form>
-
-{% for link in links %}
-<div>
-	<a href="{{ link.url }}"><h3>{{link.title}}</h3></a>
-	<a href ="upvotes/{{ link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ link.votes }}
-	<br>
-	<a href="link/{{ link.id }}">Comments</a>
-	<p>By {{ link.username }}</p>
+<div class ="container">
+<div class ="col-sm-4 add_link">
+	<h2>Add your link here:</h2>
+	<h3><form method="POST">
+		Title:<br/><input type="text" name="title"><br />
+		Url:<br/><input type="text" name="url"><br/>
+		Username:<br/><input type="text" name="user"><br/>
+		<input type="submit" value="Submit" class="btn" name="add">
+	</form></h3>
+</div>
+<div class = "col-sm-5">
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#trending">Trending Links</a></li>
+  <li><a data-toggle="tab" href="#recent">Recent Links</a></li>
+  <li><a data-toggle="tab" href="#popular">Most Popular Links</a></li>
+</ul>
+<div class="tab-content">
+  <div id="trending" class="tab-pane fade in active">
+    <h3>TRENDING</h3>
+    {% for trending_link in trending_links %}
+	<div class="links">
+		<a href="{{ trending_link.url }}"><h3>{{trending_link.title}}</h3></a>
+		<a href = "upvotes/{{ trending_link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ trending_link.votes }} <br>
+		<a href="link/{{ trending_link.id }}">Comments</a>
+		<p>By {{ trending_link.username }}</p>
 	</div>
-{% endfor %}
+	{% endfor %}
+  </div>
+  <div id="recent" class="tab-pane fade">
+    <h3>RECENT</h3>
+    {% for time_link in time_links %}
+	<div class="links">
+		<a href="{{ time_link.url }}"><h3>{{time_link.title}}</h3></a>
+		<a href = "upvotes/{{ time_link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ time_link.votes }} <br>
+		<a href="link/{{ time_link.id }}">Comments</a>
+		<p>By {{ time_link.username }}</p>
+	</div>
+	{% endfor %}
+  </div>
+  <div id="popular" class="tab-pane fade">
+    <h3>Most Popular</h3>
+    {% for vote_link in vote_links %}
+	<div  class="links">
+		<a href="{{ vote_link.url }}"><h3>{{vote_link.title}}</h3></a>
+		<a href = "upvotes/{{ vote_link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ vote_link.votes }} <br>
+		<a href="link/{{ vote_link.id }}">Comments</a>
+		<p>By {{ vote_link.username }}</p>
+	</div>
+	{% endfor %}
+  </div>
+</div>
+</div>
+<div class="col-sm-3 sign">
+	<h2><a data-toggle="modal" data-target="#signin">Signin</a><br>
+	<a href="/signup">Signup</a></h2>
+</div>	
+</div>
+
+<!--Signing-->
+<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="signin" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signin">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+			Username : <input type="text" name="user" required><br/>
+			Password : <input type="password" name="password" required><br/>
+			<input type="submit" value="Submit" class="btn" name="signin">
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
