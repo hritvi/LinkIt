@@ -19,7 +19,7 @@
 		public static function insert($content,$link_id,$username)
 		{
 			$db = \DB::get_instance();
-			$stmt=$db->prepare("INSERT INTO comments (content,link_id,username) VALUES (?,?) ");
+			$stmt=$db->prepare("INSERT INTO comments (content,link_id,username) VALUES (?,?,?) ");
 			$stmt->execute([$content,$link_id,$username]);
 			$stmt=null;
 		}

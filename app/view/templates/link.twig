@@ -2,6 +2,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../assets/js/script.js" ></script>
 </head>
 
 <div>
@@ -20,7 +21,8 @@
     <h3>RECENT</h3>
     {% for time_comment in time_comments %}
 	<div>
-		{{ time_comment.content }} by {{ time_comment.username }}
+		{{ time_comment.content }} by {{ time_comment.username }}<br/>
+		<span class="glyphicon glyphicon-chevron-up" onclick=comment_vote({{time_comment.id}})></span> {{ time_comment.votes }}
 	</div>
 	{% endfor %}
   </div>
@@ -28,7 +30,8 @@
     <h3>Most Popular</h3>
     {% for vote_comment in vote_comments %}
 	<div>
-		{{ vote_comment.content }}
+		{{ vote_comment.content }}  by {{ vote_comment.username }}<br/>
+		<span class="glyphicon glyphicon-chevron-up" onclick=comment_vote({{vote_comment.id}})></span> {{ vote_comment.votes }}
 	</div>
 	{% endfor %}
   </div>

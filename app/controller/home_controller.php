@@ -54,7 +54,9 @@
 				$_SESSION["name"]=$row['username'];
 				$_SESSION["user_id"]=$row['user_id'];
 				if(isset($_SESSION["name"])){
-					header('Location: /');
+					echo "<script type=\"text/javascript\">";
+					echo "document.location.reload();";
+					echo "</script>";
 				}
 				else{
 					echo "Invalid username or password";

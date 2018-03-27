@@ -10,6 +10,7 @@
 	    "/signin" => "\Controller\SignInController",
 	    "/link/:number"=>"\Controller\LinkController",
 	    "/user/:alpha" => "\Controller\UserController",
-	    "/upvotes/:number" => "\Controller\VotesController",
-	    "/logout" => "\Controller\LogoutController"
+	    "/upvotes" => "\Controller\VotesController",
+	    "/logout" => "\Controller\LogoutController",
+	    "/commentupvote" => "\Controller\CommentVotesController"
 	));
