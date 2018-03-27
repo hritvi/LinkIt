@@ -1,16 +1,16 @@
 <?php
 	namespace Controller;
-	class VotesController
+	class CommentVotesController
 	{
 		public function post()
 		{
-			$id=$_POST['linkid'];
+			$id=$_POST['commentid'];
 			if(!isset($_SESSION["name"])){
 				header("location: http://localhost:8000/signin");
 			}
 			else{
 				$user_id=$_SESSION["user_id"];
-				\Model\UpvoteModel::vote($id,$user_id);
+				\Model\UpvoteModel::vote_comment($id,$user_id);
 				header( "Refresh:0" );
 			}
 		}

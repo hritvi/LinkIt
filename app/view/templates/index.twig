@@ -2,6 +2,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js" ></script>
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <div class ="container">
@@ -26,7 +27,7 @@
     {% for trending_link in trending_links %}
 	<div class="links">
 		<a href="{{ trending_link.url }}"><h3>{{trending_link.title}}</h3></a>
-		<a href = "upvotes/{{ trending_link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ trending_link.votes }} <br>
+		<span class="glyphicon glyphicon-chevron-up" onclick=link_vote({{trending_link.id}})></span> {{ trending_link.votes }} <br>
 		<a href="link/{{ trending_link.id }}">Comments</a>
 		<p>By {{ trending_link.username }}</p>
 	</div>
@@ -37,7 +38,7 @@
     {% for time_link in time_links %}
 	<div class="links">
 		<a href="{{ time_link.url }}"><h3>{{time_link.title}}</h3></a>
-		<a href = "upvotes/{{ time_link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ time_link.votes }} <br>
+		<span class="glyphicon glyphicon-chevron-up" onclick=link_vote({{time_link.id}})></span> {{ time_link.votes }} <br>
 		<a href="link/{{ time_link.id }}">Comments</a>
 		<p>By {{ time_link.username }}</p>
 	</div>
@@ -46,14 +47,15 @@
   <div id="popular" class="tab-pane fade">
     <h3>Most Popular</h3>
     {% for vote_link in vote_links %}
-	<div  class="links">
+	<div class="links">
 		<a href="{{ vote_link.url }}"><h3>{{vote_link.title}}</h3></a>
-		<a href = "upvotes/{{ vote_link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ vote_link.votes }} <br>
+		<span class="glyphicon glyphicon-chevron-up" onclick=link_vote({{vote_link.id}})></span> {{ vote_link.votes }} <br>
 		<a href="link/{{ vote_link.id }}">Comments</a>
 		<p>By {{ vote_link.username }}</p>
 	</div>
 	{% endfor %}
   </div>
+
 </div>
 </div>
 <div class="col-sm-3 sign">
@@ -76,7 +78,7 @@
         <form method="POST">
 			Username : <input type="text" name="user" required><br/>
 			Password : <input type="password" name="password" required><br/>
-			<input type="submit" value="Submit" class="btn" name="signin">
+			<input type="submit" value="Submit" class="btn" name="signin" onclick=reload()>
 		</form>
       </div>
     </div>

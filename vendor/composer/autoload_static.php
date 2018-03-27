@@ -44,6 +44,7 @@ class ComposerStaticInit6ca5e068afa51f84ce40f53c28506237
     );
 
     public static $classMap = array (
+        'Controller\\CommentVotesController' => __DIR__ . '/../..' . '/app/controller/commentvote_controller.php',
         'Controller\\HomeController' => __DIR__ . '/../..' . '/app/controller/home_controller.php',
         'Controller\\LinkController' => __DIR__ . '/../..' . '/app/controller/link_controller.php',
         'Controller\\LogoutController' => __DIR__ . '/../..' . '/app/controller/logout_controller.php',

@@ -1,13 +1,21 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="../assets/js/script.js" ></script>
 </head>
 Welcome {{ user.username }}
-<div>Your Links: </div>
+<div><h2>Your Links: </h2></div>
 {% for link in links %}
 <div>
 	<a href="{{ link.url }}"><h3>{{link.title}}</h3></a>
-	<a href ="upvotes/{{ link.id }}"><span class="glyphicon glyphicon-chevron-up"></span></a> {{ link.votes }} <br>
+	<span class="glyphicon glyphicon-chevron-up" onclick=link_vote({{link.id}})></span> {{ link.votes }} <br>
 	<a href="link/{{ link.id }}">Comments</a>
 	<p>By {{ link.username }}</p>
 </div>
+{% endfor %}
+<div><h2>Your Comments: </h2></div>
+{% for comment in comments %}
+<div><h3>
+	{{ comment.content }}  by {{ comment.username }}<br/>
+		<span class="glyphicon glyphicon-chevron-up" onclick=comment_vote({{comment.id}})></span> {{ comment.votes }}
+</h3></div>
 {% endfor %}

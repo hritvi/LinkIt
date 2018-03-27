@@ -1,13 +1,20 @@
 <?php
 	namespace Model;
 	class LinkModel{
-		public static function trending()
+		public function trending()
 		{
 			$db = \DB::get_instance();
 			$stmt = $db->prepare("SELECT * FROM links");
 			$stmt->execute();
 			$rows=$stmt->fetchAll();
+			uasort($rows,sort_trending);
 			return $rows;
+		}
+		public function sort_trending($a,$b)
+		{
+			$a = $a['votes']*1000/$a['time_created'];
+			$b = $b['votes']*1000/$b['time_created'];
+			return $a - $b;
 		}
 		public static function insert($title,$url,$username)
 		{
